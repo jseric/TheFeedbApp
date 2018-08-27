@@ -1,17 +1,34 @@
 // Import modules
-const express = require('express');
+const express       = require('express');
+const mongoose      = require('mongoose');
+const cookieSession = require('cookie-session');
+const passport      = require('passport');
+
+const keys = require('./config/keys.js');
+
+// Note: DON'T change the order of the 2 below requires
+// because of mongoose model flow
+require('./models/User.js');
+require('./services/passport.js');
+
+// Connect to MongoDB using Mongoose
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 // Create new express app
 const app = express();
 
-// Route handler to route '/'
-app.get('/', (req, res) => {
+// Enable cookies
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    keys:   [keys.cookieKey]
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-  // Send back response to client
-  res.send({
-    hi: 'there'
-  });
-});
+// Import and call authRoutes functions
+require('./routes/authRoutes')(app);
 
 // Set port to be dinamical or port 5000
 // and listen on it
