@@ -2,7 +2,7 @@
 if (process.env.NODE_ENV == 'production') {
   // Production
   // Export production keys from prod.js file
-  module.export = require('./prod.js');
+  module.exports = require('./prod.js');
 }
 else {
   // Development
