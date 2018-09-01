@@ -37,12 +37,13 @@ require('./routes/billingRoutes')(app);
 
 // Production code
 if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+
   // Serve production assets using Express
   app.use(express.static('client/build'));
 
   // Serve index.html using Express
   // if route is not recognised by Express
-  const path = require('path');
   app.get(
     '*',
     (req, res) => {
