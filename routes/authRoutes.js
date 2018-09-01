@@ -1,9 +1,8 @@
 // Import modules
 const passport = require('passport');
 
-// Export methods
-module.exports = (app) =>
-{
+// Export routes
+module.exports = app => {
   // Route handler for Google OAuth
   // Path: /auth/google
   // Type: GET
@@ -22,7 +21,11 @@ module.exports = (app) =>
   app.get(
     '/auth/google/callback',
     // Get user profile from Google
-    passport.authenticate('google')
+    passport.authenticate('google'),
+    (req, res) => {
+      // Redirect to /surveys
+      res.redirect('/surveys');
+    }
   );
 
   // Route handler for logging out
@@ -32,7 +35,7 @@ module.exports = (app) =>
     '/api/logout',
     (req, res) => {
       req.logout();
-      res.send(req.user);
+      res.redirect('/');
     }
   );
 
