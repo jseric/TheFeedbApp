@@ -7,6 +7,8 @@ import { withRouter } from 'react-router-dom';
 import formFields   from './formFields.js';
 import * as actions from '../../actions';
 
+import './styles/SurveyFormReview.css';
+
 // SurveyFormReview component
 const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
   const reviewFields = _.map(formFields, ({ name, label }) => {
@@ -22,7 +24,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
   });
 
   return (
-    <div>
+    <div class="survey-form-review" >
       <h5>
         Please confirm your entries
       </h5>

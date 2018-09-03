@@ -1,0 +1,11 @@
+#survey-form {
+  width: 70%;
+  margin: 15px auto;
+}
+
+@media screen and (max-width: 768px) {
+  #survey-form {
+    width: 95%;
+    margin: 15px auto;
+  }
+}

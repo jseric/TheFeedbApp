@@ -1,0 +1,18 @@
+.header-navbar-mobile {
+  text-align: center;
+  background-color: #ee6e73;
+}
+
+.header-navbar-mobile li {
+  color: white;
+  font-size: 140%;
+}
+
+.header-navbar-mobile li a {
+  color: white;
+  font-size: 120%;
+}
+
+.header-navbar-mobile li Payments {
+  color: white;
+}

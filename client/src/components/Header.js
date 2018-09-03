@@ -2,8 +2,17 @@
 import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { Link }             from 'react-router-dom';
+import M                    from 'materialize-css';
 
 import Payments from './Payments.js';
+
+import 'materialize-css/dist/js/materialize.min.js';
+import './styles/Header.css';
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
 
 // Component class Header
 class Header extends Component {
@@ -49,18 +58,34 @@ class Header extends Component {
 
   render() {
     return(
-      <nav>
-        <div className="nav-wrapper" >
-          <Link to       ={ this.props.auth ? '/surveys' : '/' }
-                className="left brand-logo" >
-            TheFeedbApp
-          </Link>
+      <div>
+        <nav>
+          <div className="nav-wrapper" >
+            <Link to       ={ this.props.auth ? '/surveys' : '/' }
+                  className="left brand-logo" >
+              TheFeedbApp
+            </Link>
 
-          <ul className="right" >
-            { this.renderContent() }
-          </ul>
-        </div>
-      </nav>
+            <a href=""
+               data-target="mobile-demo"
+               className="sidenav-trigger right">
+              <i className="material-icons">
+                menu
+              </i>
+            </a>
+
+            <ul className="right hide-on-med-and-down" >
+              { this.renderContent() }
+            </ul>
+          </div>
+        </nav>
+
+        <ul className="sidenav header-navbar-mobile"
+            id="mobile-demo" >
+          { this.renderContent() }
+        </ul>
+      </div>
+
     );
   }
 }

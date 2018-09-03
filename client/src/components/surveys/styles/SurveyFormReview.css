@@ -1,0 +1,11 @@
+.survey-form-review {
+  width: 70%;
+  margin: 15px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .survey-form-review {
+    width: 95%;
+    margin: 15px auto;
+  }
+}

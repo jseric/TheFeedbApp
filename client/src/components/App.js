@@ -1,4 +1,4 @@
-// Import modules/components/methods
+// Import modules/components/methods/styles
 import React, { Component }       from 'react';
 import { BrowserRouter, Route }   from 'react-router-dom';
 import { connect }                from 'react-redux';
@@ -10,6 +10,8 @@ import Header    from './Header.js';
 import Landing   from './Landing.js';
 import Dashboard from './Dashboard.js';
 import SurveyNew from './surveys/SurveyNew.js';
+
+import './styles/App.css';
 
 // App component class
 class App extends Component {
