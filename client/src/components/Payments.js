@@ -9,11 +9,11 @@ import * as actions from '../actions';
 class Payments extends Component {
   render() {
     return (
-      <StripeCheckout name="TheFeedbApp"
+      <StripeCheckout name       ="TheFeedbApp"
                       description="$5.00 for 5 survey credits"
-                      amount={ 500 /* 5$ = 500 cents */ }
-                      token={ token => this.props.handleToken(token) }
-                      stripeKey={ process.env.REACT_APP_STRIPE_KEY } >
+                      amount     ={ 500 /* 5$ = 500 cents */ }
+                      token      ={ token => this.props.handleToken(token) }
+                      stripeKey  ={ process.env.REACT_APP_STRIPE_KEY } >
         <button className="btn" >
           Add Credits
         </button>

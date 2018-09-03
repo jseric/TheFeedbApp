@@ -11,6 +11,10 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './components/App.js';
 import reducers from './reducers';
 
+// Remove later!!!
+import axios from 'axios';
+window.axios = axios;
+
 // Init redux store
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 

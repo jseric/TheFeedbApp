@@ -1,5 +1,5 @@
 // Import modules/components/methods
-import { FETCH_USER } from '../actions/types';
+import { FETCH_USER } from '../actions/types.js';
 
 // Export reducer
 export default function(state = null, action) {

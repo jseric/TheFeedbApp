@@ -6,12 +6,10 @@ import { connect }                from 'react-redux';
 // Import all actions and import to obj actions
 import * as actions from '../actions';
 
-import Header  from './Header.js';
-import Landing from './Landing.js';
-
-// React router components
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Header    from './Header.js';
+import Landing   from './Landing.js';
+import Dashboard from './Dashboard.js';
+import SurveyNew from './surveys/SurveyNew.js';
 
 // App component class
 class App extends Component {
@@ -27,12 +25,12 @@ class App extends Component {
             <Header />
 
             <Route exact path="/"
-                   component={ Landing } />
+                   component ={ Landing } />
 
             <Route exact path="/surveys"
-                   component={ Dashboard } />
+                   component ={ Dashboard } />
 
-            <Route path="/surveys/new"
+            <Route path     ="/surveys/new"
                    component={ SurveyNew } />
           </div>
         </BrowserRouter>

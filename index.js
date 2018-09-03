@@ -7,9 +7,10 @@ const bodyParser    = require('body-parser');
 
 const keys = require('./config/keys.js');
 
-// Note: DON'T change the order of the 2 below requires
+// Note: DON'T change the order of the below requires
 // because of mongoose model flow
 require('./models/User.js');
+require('./models/Survey.js');
 require('./services/passport.js');
 
 // Connect to MongoDB using Mongoose
@@ -32,8 +33,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Import routes
-require('./routes/authRoutes')(app);
-require('./routes/billingRoutes')(app);
+require('./routes/authRoutes.js')(app);
+require('./routes/billingRoutes.js')(app);
+require('./routes/surveyRoutes.js')(app);
 
 // Production code
 if (process.env.NODE_ENV === 'production') {

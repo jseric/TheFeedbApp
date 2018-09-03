@@ -12,7 +12,8 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "webhook": "ssh -R thefeedbappwebappwebhookmailserver:80:localhost:5000 serveo.net"
   },
   "author": "",
   "license": "ISC",
@@ -21,9 +22,12 @@
     "concurrently": "^4.0.1",
     "cookie-session": "^2.0.0-beta.2",
     "express": "^4.15.3",
+    "lodash": "^4.17.10",
     "mongoose": "^5.2.10",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^2.0.2",
+    "sendgrid": "^5.2.3",
     "stripe": "^6.8.0"
   },
   "devDependencies": {

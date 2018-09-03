@@ -7,7 +7,8 @@ const { Schema } = mongoose;
 // Define user model schema
 const userSchema = new Schema({
   googleId: String,
-  credits:  {
+
+  credits: {
     type:    Number,
     default: 0
   }
