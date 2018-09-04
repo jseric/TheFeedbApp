@@ -14,7 +14,7 @@ https://stark-caverns-62285.herokuapp.com/
 
 - If you wish to test the app, you can sign in with Google.
 
-- When adding credits, enter this credit card number (dummy data):
+- When adding credits, enter these credit card details (dummy data):
     - Card number: 4242 4242 4242 4242
     - Expiration date: Any date in the future
     - Verification code: Any 3-digit code
