@@ -10,6 +10,15 @@ Then use TheFeedbApp! You enter your email content, and your users' email addres
 
 https://stark-caverns-62285.herokuapp.com/
 
+### Note
+
+- If you wish to test the app, you can sign in with Google.
+
+- When adding credits, enter this credit card number (dummy data):
+    - Card number: 4242 4242 4242 4242
+    - Expiration date: Any date in the future
+    - Verification code: Any 3-digit code
+
 ## Installation
 
 1) Clone the repository
@@ -34,7 +43,7 @@ https://stark-caverns-62285.herokuapp.com/
     ssh -R <YOUR_RANDOM_STRING>:80:localhost:5000 serveo.net
     ```
     
-## NOTE
+## DEVELOPMENT NOTE
 
 - You need the development keys to run the app, and, for security reasons,
   they are not included in this repository. 
